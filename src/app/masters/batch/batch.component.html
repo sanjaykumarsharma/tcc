@@ -1,0 +1,55 @@
+<div class="fl w-100">
+    <div class="fl w-50">
+        <h2>Batches</h2>
+    </div>
+    <div class="fr w-50">
+        <button mat-raised-button class="fr b white bg-light-blue" (click)="showBatchForm()">Add</button>
+    </div>
+</div>
+
+<div class="fl w-100 pt1" *ngIf="batch_form_visible">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                <h3>Add Batch</h3>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form class="w-100" (ngSubmit)="onSubmit()" #batchForm="ngForm">
+                <div class="w-100">
+                    <mat-form-field class="fl w-60">
+                        <input matInput placeholder="Name" id="name" [(ngModel)]="batch.name" name="name" #name="ngModel" required>
+
+                        <mat-hint align="end" *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                            Batch Name Is Required.
+                        </mat-hint>
+                    </mat-form-field>
+                    <div class="fl pl5 w-40">
+                        <button [disabled]="!batchForm.valid" type="submit" mat-raised-button>Submit</button>
+                        <button mat-raised-button class="pl2" (click)="hideBatchForm()">Cancle</button>
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button></button>
+        </mat-card-actions>
+
+    </mat-card>
+</div>
+
+<div class="fl w-100">
+    <mat-table #table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
+    </mat-paginator>
+</div>

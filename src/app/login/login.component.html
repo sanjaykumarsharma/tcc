@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+    <span>TCC</span>
+</mat-toolbar>
+
+
+<!-- <mat-grid-list cols="2" rowHeight="fit" style="position: inherit!important">
+    <mat-grid-tile class="background" style="width: 60%!important;"></mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card>
+            Login
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list> -->
+
+<div class="flex items-stretch fixed top-0 bottom-0 left-0 right-0">
+    <div class="w-70 bg-near-white relative">
+        <div class="absolute absolute--fill cover bg-center background"></div>
+    </div>
+    <div class="w-30 bg-near-white min-vh-100 pv5 ph5 bg-white">
+        <h1 class="f-subheadline green">TCC</h1>
+        <div class="f4 gray pb2 bb b--black-20 mb4">Login</div>
+        <form accept-charset="UTF-8" action="/login" method="post">
+            <input name="_csrf_token" type="hidden" value="PCkdQSwEKDJHNjU2Bhw9AXZTGw4mEAAARhJqoKixhwYGDhXB71jdmw=="><input name="_utf8" type="hidden" value="✓"> <label class="f6 db ttu tracked mv1" for="user_username">Username</label>
+            <input class="input-reset ba bw1 br2 pa2 mb3 db w-100" id="user_username" name="user[username]" type="text">
+
+            <label class="f6 db ttu tracked mv1" for="user_password">Password</label> <input class="input-reset ba bw1 br2 pa2 mb3 db w-100" id="user_password" name="user[password]" type="password">
+
+            <button class="bn bg-navy white pa2 br2 dib mb3" type="submit">Submit</button>
+        </form>
+    </div>
+</div>
