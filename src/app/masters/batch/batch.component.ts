@@ -12,13 +12,13 @@ export class BatchComponent implements OnInit, AfterViewInit {
   batch = new Batch();
   batch_form_visible = false;
 
-   displayedColumns = ['BATCH'];
+   displayedColumns = ['name'];
 
    ELEMENT_DATA: Batch[] = [
      {name: 'CAT2017'},
      {name: 'CAT2018'},
      {name: 'CAT2019'},
-     {name: 'MAT2017'}
+     {name: 'MAT2017'},
    ];
 
    dataSource = new MatTableDataSource<Batch>(this.ELEMENT_DATA);
